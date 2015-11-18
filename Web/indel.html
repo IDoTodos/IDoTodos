@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>IDo</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <!-- Style sheets -->
+	<link rel="stylesheet" href="content/styles/custom-overrides.css">
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
+	<link rel="stylesheet" href="bower_components/angular-xeditable/dist/css/xeditable.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body ng-app="iDo">
+    
+	<script src="node_modules/angular/angular.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	
+	<script src="bower_components/angular-material/angular-material.min.js"></script>
+	<script src="bower_components/angular-aria/angular-aria.min.js"></script>
+	<script src="bower_components/angular-animate/angular-animate.js"></script>
+	<script src="bower_components/angular-xeditable/dist/js/xeditable.js"></script>
+	
+	<script src="node_modules/angular-route/angular-route.js"></script>
+	
+	<script src="app/app.js"></script>
+
+	<script src="app/guestlist/controllers/guestList.js"></script>
+	
+	<div layout="column" ng-cloak>
+
+		<section layout="row" flex>
+			<md-sidenav class="md-sidenav-left md-whiteframe-4dp" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+				<md-toolbar>
+					<div class="md-toolbar-tools">
+						<h1 class="md-display-2" style="font-family: respective;">IDo Todos</h1>
+					</div>
+				</md-toolbar>
+				<md-toolbar role="navigation" class="flex">
+
+					<md-button href="#GuestList">Guest List</md-button>
+					<md-button href="#Venue">Venue</md-button>
+
+			    </md-toolbar>
+			</md-sidenav>
+			<md-content flex layout-padding>
+			  <div layout="column" layout-fill layout-align="top center" style="min-height: 500px;"  ng-view>
+				<p>
+				The left sidenav will 'lock open' on a medium (>=960px wide) device.
+				</p>
+			  
+			  </div>
+			  <div flex></div>
+			</md-content>
+		</section>
+	</div>
+	
+</body

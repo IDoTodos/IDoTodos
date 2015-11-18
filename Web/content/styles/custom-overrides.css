@@ -1,0 +1,10 @@
+md-toolbar .md-button {
+	font-weight: 700;
+	font-family: Calibri;
+	font-size: 18px;
+}
+
+@font-face {
+    font-family: "respective";
+    src: url(../fonts/Respective.ttf) format("truetype");
+}
