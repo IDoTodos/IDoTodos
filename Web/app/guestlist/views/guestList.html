@@ -41,27 +41,57 @@
 			  <md-divider></md-divider>
 			</md-list-item>
 			
-			<md-list-item ng-hide="lc.showAddPane" class="md-3-line">
-					<div flex></div>
+			<md-list-item ng-hide="lc.showAddPane">
 					<md-button class="md-raised md-accent" ng-click="lc.showAddPane = !lc.showAddPane">
 					  <md-icon class="material-icons" style="color: white;" >person_add</md-icon>
 					</md-button>			
+					<span flex></span>
 			</md-list-item>
 			
 			<md-list-item ng-show="lc.showAddPane">
-				<md-input-container>
-				  <label>Name</label>
-				  <input ng-model="lc.inputModel.name">
-				</md-input-container>
-				<md-input-container flex>
-				  <label>Plus 1?</label>
-				  <md-select ng-model="lc.inputModel.plusOne">
-					<md-option ng-repeat="plusOneOption in lc.plusOneOptions" value="{{plusOneOption.value}}">
-					  {{plusOneOption.text}}
-					</md-option>
-				  </md-select>
-				</md-input-container>
-				<md-button ng-click="lc.addGuest()" class="md-raised md-primary">Add</md-button>
+				
+					<md-input-container flex>
+						<label>Name</label>
+						<input ng-model="lc.inputModel.name">
+					</md-input-container>
+					<md-input-container flex>
+						<label>Plus 1?</label>
+						<md-select ng-model="lc.inputModel.plusOne">
+							<md-option ng-repeat="plusOneOption in lc.yesNoOptions" value="{{plusOneOption.value}}">
+							{{plusOneOption.text}}
+							</md-option>
+						</md-select>
+					</md-input-container>
+					
+					
+			</md-list-item>
+			<md-list-item ng-show="lc.showAddPane">	
+				
+					<md-input-container flex>
+						<label>E-mail</label>
+						<input ng-model="lc.inputModel.email">
+					</md-input-container>
+					<md-input-container flex>
+						<label>Cell</label>
+						<input ng-model="lc.inputModel.cell">
+					</md-input-container>
+					<md-input-container flex>
+						<label>Kids?</label>
+						<md-select ng-model="lc.inputModel.kids">
+							<md-option ng-repeat="kidsOption in lc.yesNoOptions" value="{{kidsOption.value}}">
+							{{kidsOption.text}}
+							</md-option>
+						</md-select>
+					</md-input-container>
+					<md-input-container flex>
+						<label>Number of Kids</label>
+						<input  ng-disabled="lc.inputModel.kids == 2" ng-model="lc.inputModel.numberOfKids">
+					</md-input-container>
+				
+			</md-list-item>
+			
+			<md-list-item ng-show="lc.showAddPane">	
+				<md-button ng-click="lc.addGuest()" class="md-raised md-primary" flex>Add</md-button>
 			</md-list-item>
 			
 		</md-list>
